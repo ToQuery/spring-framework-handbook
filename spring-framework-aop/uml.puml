@@ -1,9 +1,4 @@
-.UML Diagram Example
-
-[uml,file="/Users/toquery/Project/spring-framework-uml/spring-framework-aop/aop.png"]
-
---
-
+@startuml
 package "org" {
 
     package "aopalliance" #DDDDDD {
@@ -98,7 +93,21 @@ package "org" {
 
         Advice <|-- DynamicIntroductionAdvice
 
+        interface IntroductionAdvisor{
+            ClassFilter getClassFilter()
+        	void validateInterfaces() throws IllegalArgumentException
+        }
+
+        Advisor <|-- IntroductionAdvisor
+
+        IntroductionInfo <|-- IntroductionAdvisor
+
+        interface IntroductionAwareMethodMatcher{
+            boolean matches(Method method, Class<?> targetClass, boolean hasIntroductions)
+        }
+
+        MethodMatcher <|-- IntroductionAwareMethodMatcher
+
     }
 }
-
---
+@enduml
