@@ -1,0 +1,44 @@
+.UML Diagram Example
+
+[uml,file="/Users/toquery/Project/spring-framework-uml/spring-framework-aop/aop.png"]
+
+--
+
+package "org.aopalliance" #DDDDDD {
+    package "aop" {
+      interface Advice
+      class AspectException
+    }
+    
+    package "intercept" {
+      interface ConstructorInterceptor{
+        Object construct(ConstructorInvocation invocation) throws Throwable
+      }
+      interface ConstructorInvocation {
+         Constructor<?> getConstructor()
+      }
+      interface Interceptor
+      interface Invocation{
+        Object[] getArguments()
+      }
+      interface Joinpoint{
+        Object proceed() throws Throwable
+        Object getThis()
+        AccessibleObject getStaticPart()
+      }
+      interface MethodInterceptor{
+        Object invoke(MethodInvocation invocation) throws Throwable
+      }
+      interface MethodInvocation{
+        Method getMethod()
+      }
+      
+      Advice <|-- Interceptor
+      Invocation <|-- ConstructorInvocation
+      Joinpoint <|-- Invocation
+      Interceptor <|-- MethodInterceptor
+      Invocation <|-- MethodInvocation
+    }
+}
+
+--
