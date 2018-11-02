@@ -1,5 +1,13 @@
 @startuml
+
+' -----------------------------------------------------
+'skinparam defaultTextAlignment center
+' -----------------------------------------------------
+'top to bottom direction
+left to right direction
+
 package "org" {
+
 
     package "aopalliance" #DDDDDD {
 
@@ -27,7 +35,7 @@ package "org" {
 
           interface Interceptor
 
-          Advice <|-- Interceptor
+          Advice <|- Interceptor
 
           interface Invocation{
             Object[] getArguments()
@@ -65,13 +73,13 @@ package "org" {
 
         }
 
-        Advice <|-- AfterAdvice
+        Advice <|- AfterAdvice
 
         interface AfterReturningAdvice{
             void afterReturning(@Nullable Object returnValue, Method method, Object[] args, @Nullable Object target) throws Throwable
         }
 
-        AfterAdvice <|-- AfterReturningAdvice
+        AfterAdvice <|- AfterReturningAdvice
 
         class AopInvocationException
 
@@ -80,7 +88,7 @@ package "org" {
 
         interface BeforeAdvice
 
-        Advice <|-- BeforeAdvice
+        Advice <|- BeforeAdvice
 
         interface ClassFilter{
             boolean matches(Class<?> clazz);
@@ -91,7 +99,7 @@ package "org" {
             boolean implementsInterface(Class<?> intf)
         }
 
-        Advice <|-- DynamicIntroductionAdvice
+        Advice <|- DynamicIntroductionAdvice
 
         interface IntroductionAdvisor{
             ClassFilter getClassFilter()

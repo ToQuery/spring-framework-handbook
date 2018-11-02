@@ -14,6 +14,16 @@
 
 `graphviz`安装方法 see 百度 or Google
 
+## PUML语法
+
+- together
+
+> https://mrhaki.blogspot.com/2016/12/plantuml-pleasantness-keeping-elements.html
+
+- extends
+
+> <|- 与 <|-- 不同
+
 ## 项目进度
 
 - spring-framework-aop

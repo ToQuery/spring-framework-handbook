@@ -1,0 +1,15 @@
+@startuml
+
+package “Core Components” {
+[Backend Client] as BackendClient
+[File Reader] as FileReader
+[Content Transform] as ContentTransform
+[Logging]
+}
+
+BackendClient ~~> ContentTransform : uses
+FileReader ~~> ContentTransform: uses
+
+BackendClient -[hidden]- Logging
+
+@enduml
