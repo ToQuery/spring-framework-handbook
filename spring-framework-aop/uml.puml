@@ -4,7 +4,7 @@
 'skinparam defaultTextAlignment center
 ' -----------------------------------------------------
 'top to bottom direction
-left to right direction
+'left to right direction
 
 package "org" {
 
@@ -115,6 +115,16 @@ package "org" {
         }
 
         MethodMatcher <|-- IntroductionAwareMethodMatcher
+
+        interface IntroductionInfo{
+            Class<?>[] getInterfaces()
+        }
+
+        interface IntroductionInterceptor{
+        }
+
+        MethodInterceptor <|-- IntroductionInterceptor
+        DynamicIntroductionAdvice  <|-- IntroductionInterceptor
 
     }
 }
