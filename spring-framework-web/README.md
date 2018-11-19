@@ -14,9 +14,9 @@
 >
 > RestTemplate除了支持频率较低的情况的通用{@code exchange}和{@code execute}方法外，还通过HTTP方法为常见方案提供模板。
 >
-> NOTE: As of 5.0, the non-blocking, reactive {@code org.springframework.web.reactive.client.WebClient} offers a modern alternative to the {@code RestTemplate} with efficient support for both sync and async, as well as streaming scenarios. The {@code RestTemplate} will be deprecated in a future version and will not have major new features  added going forward.
+> NOTE: As of 5.0, the non-blocking, reactive {@code org.springframework.web.reactive.client.WebClient} offers a modern alternative to the {@code RestTemplate} with efficient support for both sync and async, as well as streaming scenarios. The {@code RestTemplate} will be deprecated in a future version and will not have major new features added going forward.
 >
-> 从5.0开始，非阻塞，响应式 {@code org.springframework.web.reactive.client.WebClient} 提供了 {@code RestTemplate} 的现代替代方案，同时有效支持同步和异步，以及流方案。 {@code RestTemplate}将在未来版本中弃用，并且不会在未来添加主要的新功能。
+> 从5.0开始，非阻塞，响应式 {@code org.springframework.web.reactive.client.WebClient} 提供了 {@code RestTemplate} 的现代替代方案，同时有效支持同步和异步，以及流方案。 {@code RestTemplate} 将在未来版本中弃用，并且不会在未来添加主要的新功能。
 
 
 
